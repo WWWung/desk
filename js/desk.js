@@ -2,10 +2,10 @@
 //	改变网页大小改变尺寸
 function deskHeight(){
 	var h = $(window).height();
-	desk.css('height',h-20);
+	$('.desk').css('height',h-20);
+	$('body').css('height',h-20);
 	sortFile(10);
 }
-
 //----------------------------------------------------------------------
 //	创建桌面
 function createDesk(data){
@@ -148,12 +148,12 @@ function paintDivDown(e){
 			if(isTouch(painting,item)){
 				var id = $(item).data('index')*1;
 				if(!getObjectById(data,id).checked){
-					checkFile(item);	
+					checkFile(item);
 				}
 			}else{
 				var id = $(item).data('index')*1;
 				if(getObjectById(data,id).checked){
-					checkFile(item);	
+					checkFile(item);
 				}
 			}
 		});
@@ -208,7 +208,7 @@ function newFile(){
 //	拖拽文件夹
 function dragFileDown(e,item){
 	var x = e.pageX - $(item).offset().left;
-	var y = e.pageY - $(item).offset().top;	
+	var y = e.pageY - $(item).offset().top;
 	$(item).css('z-index',100);
 	$(document).on('mousemove',dragFileMove);
 	$(document).on('mouseup',dragFileUp)
@@ -236,7 +236,7 @@ function dragFileDown(e,item){
 			getPopupInfo();
 		}
 		var obj = getObjectById(data,$(item).data('index')*1);
-		if($(item).is('.item') && obj.type != 'date' && obj.type != 'resycle'){
+		if($(item).is('.item') && obj.type === 'folder'){
 			var target = nearest(item);
 			if(target){
 				var targetId = $(target).data('index')*1;
@@ -247,7 +247,7 @@ function dragFileDown(e,item){
 			}
 			if(isTouch(item,$('.po-content')) && $(item).data('index')*1 !== $('.po-content').attr('index')*1){
 				moveToSub(item,$('.po-content').attr('index')*1);
-				
+
 			}
 		}
 		$(document).off('mousemove mouseup');
@@ -346,7 +346,7 @@ function rightResize(e){
 	$('.popup').css({
 		right:'',
 		left:l
-	})	
+	})
 	$(document).on('mousemove',rightMove);
 	$(document).on('mouseup',popupUp);
 	function rightMove(e){
@@ -390,7 +390,7 @@ function getPopupInfo(){
 function smallOrBig(){
 	if($('.popup').height() != $(window).height() || $('.popup').width() != $(window).width()){
 		$('.po-btns').children().eq(0).removeClass('icon-small');
-		
+
 	}else{
 		$('.po-btns').children().eq(0).addClass('icon-small');
 	}
@@ -416,7 +416,7 @@ function resizeClick(_this){
 		})
 		_this.addClass('icon-small');
 	}
-}	
+}
 
 //-----------------------------------------------
 //	移动到子项
@@ -538,7 +538,7 @@ function timeAppear(){
 			})
 		})
 	});
-	
+
 	clearInterval(timer);
 	var timer = setInterval(timerNow,500);
 }
@@ -571,24 +571,29 @@ function tipShow(str){
 
 //--------------------------------------------------------------------------
 //	搜索文件
-function searchFile(id){
-	
-	
-	
+function searchFile(str){
+	$('.po-item').each(function(i,item){
+		var inner = $(item).children('.po-item-name').html();
+		if(inner.indexOf(str)!==-1 && str !== ''){
+			$(item).addClass('po-item-active');
+		}else{
+			$(item).removeClass('po-item-active');
+		}
+	})
 }
 
 //----------------------------------------------------------------------------
-//	
+//	拖拽移出文件
 function moveSubFile(id,e){
 	var div = $('<div class="mouse-item" data-index='+id+'></div>');
-			var item = getSubDom(id);
-			var obj = getObjectById(data,id);
-			var str = `<a href="javascript:;" class="mouse-img">
-							<img src="imgs/file.png"/>
-						</a>
-						<p class="mouse-name">${obj.name}</p>`;
-			$(div).appendTo($(document.body));
-			$(div).html(str);
+	var item = getSubDom(id);
+	var obj = getObjectById(data,id);
+	var str = `<a href="javascript:;" class="mouse-img">
+					<img src="imgs/file.png"/>
+				</a>
+				<p class="mouse-name">${obj.name}</p>`;
+	$(div).appendTo($(document.body));
+	$(div).html(str);
 	$(document).on('mousemove',movefilemove);
 	$(document).on('mouseup',movefileup);
 	function movefilemove(e){
@@ -625,5 +630,3 @@ function moveSubFile(id,e){
 		$(document).off('mousemove mouseup');
 	}
 }
-
-

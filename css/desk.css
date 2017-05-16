@@ -1,3 +1,6 @@
+body{
+	overflow: hidden;
+}
 .desk{
 	position: relative;
 	width: calc(100% - 20px);
@@ -289,6 +292,10 @@
 	border-radius: 4px;
 	/*background: rgba(155,155,220,0.5);*/
 }
+.po-item-active{
+	border-color: #131bab;
+	background: rgba(155,155,220,0.5);
+}
 .bread-ico{
 	float: left;
 	width: 20px;
@@ -321,7 +328,7 @@
 	right: 0;
 	width: 180px;
 	height: 30px;
-	/*border:1px solid #f12756;*/ 
+	/*border:1px solid #f12756;*/
 	border-radius: 6px;
 	text-align: center;
 }
@@ -465,10 +472,22 @@
 	background: #fff;
 	border-radius: 6px;
 	overflow: hidden;
+	transform: scale(0);
+	opacity: 0;
+}
+.draw-close{
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	color: rgb(35, 193, 76);
 }
 .draw-head{
 	height: 80px;
-	background: #bbb;
+	background: #ededed;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -488,7 +507,7 @@
 	font: 14px/27px helvetica,tahoma,"微软雅黑";
 	color: #002952;
 }
-.draw-tools{
+.draw-tools, .draw-shape{
 	width: 163px;
 	height: 37px;
 	margin-top: 9px;
@@ -496,12 +515,101 @@
 	box-sizing: border-box;
 	border-top: 1px solid #007e7e;
 	border-left: 1px solid #007e7e;
+	display: flex
+}
+.draw-shape{
+	display: block;
+}
+.canvas{
+	box-sizing: border-box;
+	border: 2px dashed #a7a7a7;
 }
 .draw-tools-item{
-	float: left;
-	width: 54px;
-	height: 18px;
+	flex: 1;
+	height: 100%;
 	box-sizing: border-box;
 	border-bottom: 1px solid #007e7e;
 	border-right: 1px solid #007e7e;
+	text-align: center;
+	font: 18px/36px '微软雅黑';
+	color: #ee8d0c;
+}
+.draw-tools .draw-tools-item:nth-child(1){
+	background: #000;
+}
+.draw-shape .draw-tools-item{
+	float: left;
+	width: 54px;
+	height: 18px;
+	font:14px/20px '微软雅黑';
+	color: #000;
+}
+.draw-s .draw-tools-item:nth-child(1){
+	background: #000;
+	color: #fff;
+}
+.thickness{
+	width: 56px;
+	margin: 6px auto 0;
+}
+.thickness li{
+	height: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.thickness li span{
+	width: 90%;
+	background: #000;
+}
+.thickness li:nth-child(1){
+	border: 1px dotted rgb(207, 111, 24);
+}
+.thickness li:nth-child(1) span{
+	height: 1px;
+}
+.thickness li:nth-child(2) span{
+	height: 2px;
+}
+.thickness li:nth-child(3) span{
+	height: 3px;
+}
+.thickness li:nth-child(4) span{
+	height: 4px;
+}
+.draw-color .draw-tools-item{
+	display: flex;
+	border: 1px solid #007e7e;
+	justify-content: center;
+	align-items: center;
+	margin-top: -1px;
+	margin-left: -1px;
+	position: relative;
+}
+.draw-color{
+	border: none;
+}
+.draw-color .draw-tools-item span{
+	width: 15px;
+	height: 15px;
+	background: black;
+}
+.draw-color .draw-tools-item:nth-child(2) span{
+	background:blue;
+}
+.draw-color .draw-tools-item:nth-child(3) span{
+	background:yellow;
+}
+.draw-color .draw-tools-item:nth-child(4) span{
+	background:red;
+}
+.draw-color .draw-tools-item:nth-child(5) span{
+	background:purple;
+}
+.draw-color .draw-tools-item:nth-child(6) span{
+	background:pink;
 }

@@ -26,6 +26,15 @@ function createData(){
 				child:[]
 			},
 			{
+				type:'draw',
+				id:9,
+				pId:0,
+				name:'画板',
+				checked:false,
+				time:'2017/4/7 23:58',
+				child:[]
+			},
+			{
 				type:'folder',
 				id:1,
 				pId:0,
@@ -91,3 +100,7 @@ var popupWidth = 0,
 	popupHeight = 0,
 	popupLeft = 0,
 	popupTop = 0;
+
+//储存canvas图片
+var imgHistory = JSON.parse(localStorage.getItem('imgHistory')) || [];
+console.log(imgHistory);

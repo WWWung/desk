@@ -42,7 +42,7 @@ function dateFormat(data,id){
 function getImgSrc(data,id){
 	var obj = getObjectById(data,id);
 	var src = '';
-	var arr = ['imgs/recycle.png','imgs/file.png','imgs/calendar.png'];
+	var arr = ['imgs/recycle.png','imgs/file.png','imgs/calendar.png','imgs/draw.png'];
 	if(obj){
 		switch(obj.type){
 			case 'folder':
@@ -53,6 +53,9 @@ function getImgSrc(data,id){
 				break;
 			case 'date':
 				src = arr[2];
+				break;
+			case 'draw':
+				src = arr[3];
 				break;
 		}
 	}
@@ -192,4 +195,63 @@ function getSubDom(id){
 		}
 	});
 	return obj;
+}
+
+//--------------------------------------------------------------------
+//	将canvas图片存储在locastorage中
+function storageImg(){
+	var str = $('.canvas')[0].toDataURL();
+	if(imgHistory.length>10){
+		imgHistory = imgHistory.splice(0,10);
+	}
+	imgHistory.unshift(str);
+	storage.setItem('imgHistory',JSON.stringify(imgHistory));
+}
+
+//------------------------------------------------------------------
+//	选择画笔颜色
+function colorPicker(key){
+	var color = '';
+	switch (key) {
+		case 1:
+			color = 'black';
+			break;
+		case 2:
+			color = 'blue';
+			break;
+		case 3:
+			color = 'yellow';
+			break;
+		case 4:
+			color = 'red';
+			break;
+		case 5:
+			color = 'purple';
+			break;
+		case 6:
+			color = 'pink';
+			break;
+	}
+	return color;
+}
+
+//------------------------------------------------------------------
+//	选择画笔粗细
+function widthPicker(key){
+	var thickness = 1;
+	switch (key) {
+		case 1:
+			thickness = 1;
+			break;
+		case 2:
+			thickness = 2;
+			break;
+		case 3:
+			thickness = 3;
+			break;
+		case 4:
+			thickness = 4;
+			break;
+	}
+	return thickness;
 }

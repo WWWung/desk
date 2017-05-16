@@ -152,11 +152,14 @@
 			</div>
 		</section>
 		<div class="tip"></div>
-		<!--<div class="drawBoard">
+		<div class="drawBoard">
+			<a href="javascript:;" class="draw-close">
+				<i class="icon-close"></i>
+			</a>
 			<div class="draw-head">
 				<div class="draw-option">
 					<div class="draw-nav">图像</div>
-					<ul>
+					<ul class='draw-handler'>
 						<li>撤回操作</li>
 						<li>清空画布</li>
 					</ul>
@@ -164,47 +167,88 @@
 				<div class="draw-option">
 					<div class="draw-nav">工具</div>
 					<div class="draw-tools">
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
+						<span class="draw-tools-item">
+							<i class="icon-pencle"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-eraser"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-text"></i>
+						</span>
 					</div>
 				</div>
 				<div class="draw-option">
 					<div class="draw-nav">形状</div>
-					<div class="draw-tools">
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
-						<span class="draw-tools-item"></span>
+					<div class="draw-shape draw-s">
+						<span class="draw-tools-item">
+							<i class="icon-t"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-round-2"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-rect"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-line"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-round"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-rect-1"></i>
+						</span>
 					</div>
 				</div>
 				<div class="draw-option">
 					<div class="draw-nav">粗细</div>
-					<ul>
-						<li>撤回操作</li>
-						<li>清空画布</li>
+					<ul class="thickness">
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
 					</ul>
 				</div>
 				<div class="draw-option">
 					<div class="draw-nav">颜色</div>
-					<ul>
-						<li>撤回操作</li>
-						<li>清空画布</li>
-					</ul>
+					<div class="draw-shape draw-color">
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+					</div>
 				</div>
 			</div>
-			<canvas class="canvas" width="945" height="500"></canvas>
-		</div>-->
+			<canvas class="canvas" width="946" height="496"></canvas>
+		</div>
 		<script src="js/jquery-3.2.0.js"></script>
 		<script src="js/data.js"></script>
 		<script src="js/tools.js"></script>
 		<script src="js/desk.js"></script>
-		<script src="js/main.js"></script>
 		<script src="js/canvas.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

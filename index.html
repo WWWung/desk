@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Desk</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/clear.css"/>
+		<link rel="stylesheet" type="text/css" href="css/desk.css"/>
+	</head>
+	<body>
+		<div class="desk">
+			<!--<div class="item">
+				<a href="javascript:;" class="item_img">
+					<img src="imgs/file.png"/>
+				</a>
+				<p class="item_name">回收站</p>
+				<input type="text" />
+			</div>-->
+		</div>
+		<ul class="mousemenu">
+			<li>
+				<i class="icon-2"></i>
+				<span>
+					查看(V)
+				</span>
+				<i class="icon-0"></i>
+				<ul class="submenu">
+					<li>小图标</li>
+					<li>中图标</li>
+					<li>大图标</li>
+				</ul>
+			</li>
+			<li>
+				<i class="icon-1"></i>
+				<span>
+					排列方式(O)
+				</span>
+				<i class="icon-0"></i>
+				<ul class="submenu">
+					<li>修改日期</li>
+				</ul>
+			</li>
+			<li>
+				<i class="icon-4"></i>
+				<span>
+					刷新(E)
+				</span>
+			</li>
+			<li>
+				<i class="icon-3"></i>
+				<span>
+					新建文件夹(N)
+				</span>
+			</li>
+			<li>
+				<i class="icon-1"></i>
+				<span>
+					显示设置
+				</span>
+			</li>
+			<li>
+				<i class="icon-7"></i>
+				<span>
+					个性化
+				</span>
+			</li>
+			<li>
+				<i class="icon-6"></i>
+				<span>
+					控制面板
+				</span>
+			</li>
+			<li>
+				<i class="icon-deleteDate"></i>
+				<span>
+					清空本地数据
+				</span>
+			</li>
+		</ul>
+		<section class="popup" style="left: calc(50% - 275px); top: calc(50% - 200px);">
+			<div class="po-left"></div>
+			<div class="po-top"></div>
+			<div class="po-right"></div>
+			<div class="po-bottom"></div>
+			<div class="po-lt"></div>
+			<div class="po-lb"></div>
+			<div class="po-rt"></div>
+			<div class="po-rb"></div>
+			<div class="po-show">
+				<div class="po-btns">
+					<i class="icon-big"></i>
+					<i class="icon-close"></i>
+				</div>
+				<div class="po-head">
+					<i>
+						<img src="imgs/po-file.jpg"/>
+					</i>
+					<span class="po-title">文件名</span>
+				</div>
+				<div class="po-bread">
+					<div class="po-bread-nav">
+						<i class="bread-ico"></i>
+						<i class="icon-more"></i>
+						<span class="bread-name">文件夹</span>
+					</div>
+					<input type="text" class="po-search" placeholder="搜索文件"/>
+					<a href="javascript:;" class="search-img"></a>
+				</div>
+				<div class="po-nav">
+					<div class="po-name">名称</div>
+					<div class="po-time">修改时间</div>
+					<div class="po-type">类型</div>
+				</div>
+				<div class="po-content">
+					<div class="po-wrap">
+						<div class="po-item">
+							<i></i>
+							<span class="po-item-name">文件夹</span>
+							<span class="po-item-time">2017/4/8 12:33</span>
+							<span class="po-item-type">文件夹</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="time-screen">
+			<span class="hour-screen"></span>
+		</div>
+		<section class="calendar">
+			<i class="icon-close"></i>
+			<div class="date-time"></div>
+			<div class="date-month">
+				<div class="cur-month">xxxx年x月</div>
+				<div class="set-month">
+					<a href="javascript:;" class="date-prev"><</a>
+					<a href="javascript:;" class="date-next">></a>
+				</div>
+			</div>
+			<div class="date-dates">
+				<div class="date-days">
+					<span>一</span>
+					<span>二</span>
+					<span>三</span>
+					<span>四</span>
+					<span>五</span>
+					<span>六</span>
+					<span>日</span>
+				</div>
+				<div class="date-wrap">
+					<div class="date-nums"></div>
+				</div>
+			</div>
+		</section>
+		<div class="tip"></div>
+		<div class="drawBoard">
+			<a href="javascript:;" class="draw-close">
+				<i class="icon-close"></i>
+			</a>
+			<div class="draw-head">
+				<div class="draw-option">
+					<div class="draw-nav">图像</div>
+					<ul class='draw-handler'>
+						<li>撤回操作</li>
+						<li>清空画布</li>
+					</ul>
+				</div>
+				<div class="draw-option">
+					<div class="draw-nav">工具</div>
+					<div class="draw-tools">
+						<span class="draw-tools-item">
+							<i class="icon-pencle"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-eraser"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-text"></i>
+						</span>
+					</div>
+				</div>
+				<div class="draw-option">
+					<div class="draw-nav">形状</div>
+					<div class="draw-shape draw-s">
+						<span class="draw-tools-item">
+							<i class="icon-t"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-round-2"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-rect"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-line"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-round"></i>
+						</span>
+						<span class="draw-tools-item">
+							<i class="icon-rect-1"></i>
+						</span>
+					</div>
+				</div>
+				<div class="draw-option">
+					<div class="draw-nav">粗细</div>
+					<ul class="thickness">
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+						<li>
+							<span></span>
+						</li>
+					</ul>
+				</div>
+				<div class="draw-option">
+					<div class="draw-nav">颜色</div>
+					<div class="draw-shape draw-color">
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+						<span class="draw-tools-item">
+							<span></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<canvas class="canvas" width="946" height="496"></canvas>
+		</div>
+		<script src="js/jquery-3.2.0.js"></script>
+		<script src="js/data.js"></script>
+		<script src="js/tools.js"></script>
+		<script src="js/desk.js"></script>
+		<script src="js/canvas.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
